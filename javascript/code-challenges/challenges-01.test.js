@@ -31,9 +31,7 @@ const addExclamation = (arr) => {
   let newStrArray = [];
 
   arr.forEach(value => {
-    newStrArray.push(value +=
-
-      '!');
+    newStrArray.push(value += '!');
   });
 
   return newStrArray;
@@ -49,7 +47,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
 
-  let newArray = [''];
+  let newArray = [];
 
   arr.forEach(value => {
     newArray.push(value.toUpperCase());
@@ -69,7 +67,7 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let newArray = [''];
+  let newArray = [];
 
   word.forEach(value => {
     newArray.push((value += '!').toUpperCase());
@@ -82,7 +80,7 @@ const speaker = (words, callback) => {
 
   let newArray = [];
   words.forEach(value => {
-    newArray.push(callback);
+    newArray.push(callback(value));
   });
 
   return newArray;
