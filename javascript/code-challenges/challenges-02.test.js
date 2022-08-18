@@ -38,10 +38,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
 
-  let newArray = [];
-  arr.forEach(value => {
-    newArray.push(Math.pow(value += '!'));
-  });
+  let newArray = arr.map(value => value += '?');
 
   return newArray;
 };
@@ -75,11 +72,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   let newArray = [];
 
-  arr.forEach(value, index => {
+  arr.forEach(value => {
     newArray.push(Math.pow(2, value));
-  }
+  });
 
-return newArray;
+  return newArray;
 
 };
 
