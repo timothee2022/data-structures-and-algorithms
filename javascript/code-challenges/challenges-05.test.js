@@ -41,10 +41,9 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  return arr.reduce((sum, i) => {
-    return sum + (i.price * i.quantity)
-  },
-    0)
+  return arr.reduce((sum, purchase) => {
+    return sum + purchase.purchasePrice;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
