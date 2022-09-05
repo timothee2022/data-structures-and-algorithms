@@ -13,6 +13,7 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   return people.map(value => `${value.firstName} ${value.lastName}`);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,10 +42,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  return arr.reduce((sum, i) => {
-    return sum + (i.price * i.quantity)
-  },
-    0)
+  let newArry = arr.reduce( (acc, value, i) => {
+    acc = acc + value.purchasePrice;
+    return acc;
+  }, 0);
+  return newArry;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +58,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let newArry = arr.reduce( (acc, v, i) => {
+    acc = ++i;
+    return acc;
+  }, 0);
+  return newArry;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,7 +123,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let newArry = arr.reduce( (acc, v, i) => {
+    acc.push(v.name);
+    return acc;
+  }, []);
+  return newArry;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,9 +139,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  str.reduce((previous, current) => [...previous, current.name],
-    []
-  );
+  let newArry = str.split('').reduce((acc, v, i) => {
+    return acc = v + acc;
+  }, '');
+  return newArry;
 };
 
 /* ------------------------------------------------------------------------------------------------
