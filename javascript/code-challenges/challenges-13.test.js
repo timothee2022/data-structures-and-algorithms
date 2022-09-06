@@ -9,7 +9,7 @@ Write a function named longestString that takes in an array of strings and retur
 const longestString = (arr) => {
   let longestStr = '';
   arr.forEach(str => {
-    if(str.length > longestStr.length){
+    if (str.length > longestStr.length) {
       longestStr = str;
     }
 
@@ -165,7 +165,7 @@ describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
     const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3 = ['Ginger']
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
