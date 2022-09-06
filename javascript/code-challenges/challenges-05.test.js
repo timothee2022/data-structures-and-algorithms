@@ -42,7 +42,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  let newArry = arr.reduce( (acc, value, i) => {
+  let newArry = arr.reduce((acc, value, i) => {
     acc = acc + value.purchasePrice;
     return acc;
   }, 0);
@@ -58,7 +58,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  let newArry = arr.reduce( (acc, v, i) => {
+  let newArry = arr.reduce((acc, v, i) => {
     acc = ++i;
     return acc;
   }, 0);
@@ -123,7 +123,7 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  let newArry = arr.reduce( (acc, v, i) => {
+  let newArry = arr.reduce((acc, v, i) => {
     acc.push(v.name);
     return acc;
   }, []);
