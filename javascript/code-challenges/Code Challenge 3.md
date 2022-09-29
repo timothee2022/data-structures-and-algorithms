@@ -1,4 +1,4 @@
-# Code Challenge 13
+# Code Challenge 3
 
 ![Code Challenge 3 WhiteBoard](./Code%20Challenge%203%20WhiteBoard.png)
 
