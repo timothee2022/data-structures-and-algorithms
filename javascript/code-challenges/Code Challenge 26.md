@@ -34,4 +34,29 @@ For your own understanding, consider also stepping through these inputs:
 
 ### Code
 
+const insertionSort = (nums) => {
+  for (let i = 1; i < nums.length; i++) {
+    let j = i - 1
+    let tempValue = nums[i]
+    while (j >= 0 && nums[j] > tempValue) {
+      nums[j + 1] = nums[j]
+      j--
+    }
+    nums[j+1] = tempValue
+  }
+  return nums
+}
 
+console.log(insertionSort([26, 5, 36, 9, 10, 0, 12]));
+
+
+### Big O
+O(n). We will need to loop through the array n time
+
+### Algorithm
+
+* The sorted array in the array is the value of elements on the left of the key;
+* The unsorted array in the array is the value of elements on the right of the key;
+* Select the first unsorted element;
+* Swap other elements to the right of the array to create the correct position and shift the unsorted element;
+* Advance the marker to the right one element
