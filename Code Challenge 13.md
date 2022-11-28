@@ -13,9 +13,11 @@ There are 3 types of brackets:
 * Curly Brackets : {}
 
 ## Whiteboard Process
+
 We started by understanding the problem domain and know exactly the end-goal. We went through the visualization and then define our algorithm and pseudo code.
 
 ## Author & Co-Author
+
 Timothee Oduhsina, Robert Ball
 
 ## Solution
