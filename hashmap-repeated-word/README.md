@@ -2,31 +2,36 @@
 
 ![Code Challenge 31 WhiteBoard](./Code%20Challenge%2031.PNG)
 
-Author: Timothee Odushina
+### Author: Timothee Odushina
 
-Date: 31 October 2022
+### Date: 31 October 2022
 
-Problem domain:
+### Ressources:
+
+[geeks-for-geeks](https://www.geeksforgeeks.org/find-first-repeated-word-string/)
+[youtube](youtube.com)
+
+### Problem domain:
 
 * Write a function called repeated word that finds the first word to occur more than once in a string
 * Arguments: string
 * Return: string
 
-Input & Output:
+### Input & Output:
 
 * Input: string of words
 * Output: first repeated word in string
 
-Test Cases:
+### Test Cases:
 
 * Are the strings empty?
 * If the string has no repeated words, return "No repeated words"
 
-Visualization:
+### Visualization:
 
 ![](./Code%20Challenge%2031.PNG)
 
-Algorithm:
+### Algorithm:
 
 * Write a function called repeated-word that take string as
 argument and return string.
@@ -42,40 +47,36 @@ argument and return string.
 * first word like "he" needs to be mapped
 * first word like "he" needs to be mapped
 
-Code :
+### Code :
 
-function repeated-word(string) {
+let input = 'Once upon a time, there was a brave princess who...';
 
-    let mp = new Map();
-    let t = "";
-    let ans = "";
+var regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
-    for(let i = s.length - 1; i >= 0; i--) {
-
-        if(s[i] != ' ') {
-
-            t += s[i]; } else {
-
-                if(mp.has(t))
-
-               ans = t;
-
-            else mp.set(t, 1)
-
-            t = ""; }
-
-    }
-
-    if(mp.has(t)) ans=t;
-
-    if(ans!="")
-
-    { ans = [...ans].reverse().join("");
-
-        document.write(ans);}
-
-    else
-
-    document.write("No Repeated words");
-
+function repeatedWord(string) {
+  return string.replace(regex, '');
 }
+
+function first_repeating_word(string){
+
+  let puncString = repeatedWord(string);
+  let lowString = puncString.toLowerCase();
+
+  let word_count = new Map();
+
+  for(let i of lowString.split(' ')){
+    if(word_count.has(i)){
+      word_count.set(i,word_count.get(i) + 1);
+    }
+    else word_count.set(i,1);
+
+    if(word_count.get(i) > 1)
+      return i;
+  }
+  return 'No Repetition';
+}
+
+console.log(first_repeating_word(input));
+
+
+module.exports = first_repeating_word;
