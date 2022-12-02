@@ -10,6 +10,11 @@ Review the pseudocode below, then trace the algorithm by stepping through the pr
 
 Once you are done with your article, code a working, tested implementation of Merge Sort based on the pseudocode provided.
 
+### Ressources
+
+[stackabuse](https://stackabuse.com/merge-sort-in-javascript/)
+[youtube video](youtube.com)
+
 ### Pseudocode
 
 ALGORITHM Mergesort(arr)
@@ -46,32 +51,49 @@ ALGORITHM Merge(left, right, arr)
     else
        set remaining entries in arr to remaining values in left
 
-### Sample Arrays
+### Algorithm
 
-In your blog article, visually show the output of processing this input array:
+Here are the steps Merge Sort takes:
 
-[8,4,23,42,16,15]
-
-For your own understanding, consider also stepping through these inputs:
-
-Reverse-sorted: [20,18,12,8,5,-2]
-Few uniques: [5,12,7,5,5,7]
-Nearly-sorted: [2,3,5,7,13,11]
-
-### Implimentation
-
-* Provide a visual step through for each of the sample arrays based on the provided pseudo code
-* Convert the pseudo-code into working code in your language
-* Present a complete set of working tests
+* Split the given list into two halves (roughly equal halves in case of a list with an odd number of elements).
+* Continue dividing the subarrays in the same manner until you are left with only single element arrays.
+* Starting with the single element arrays, merge the subarrays so that each merged subarray is sorted.
+* Repeat step 3 unit with end up with a single sorted array.
 
 ### Code
 
+// merge method
+function merge(leftArray, rightArray) {
+  let arr = [];
 
+  while (leftArray.length && rightArray.length) {
 
+    if (leftArray[0] < rightArray[0]) {
+      arr.push(leftArray.shift());
+    } else {
+      arr.push(rightArray.shift());
+    }
+  }
+  return [...arr, ...leftArray, ...rightArray];
+}
+
+// sort method
+
+function mergeSort(array) {
+  const half = array.length / 2;
+
+  if(array.length < 2){
+    return array;
+  }
+
+  const left = array.splice(0, half)
+  return merge(mergeSort(left),mergeSort(array));
+}
+
+module.exports = {mergeSort, merge};
 
 ### Big O
 
-
-### Algorithm
-
+Time: O(log(n))
+Space: O(log(n))
 
