@@ -1,6 +1,6 @@
 # Code Challenge 16
 
-![Code Challenge 16 WhiteBoard](./Binary%20Tree_%20Find%20Max.png)
+![Code Challenge 16 WhiteBoard](./Code%20Challenge%2016.PNG)
 
 Author: Timothee Odushina
 
